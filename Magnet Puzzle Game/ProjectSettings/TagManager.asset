@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Magnetised
+  - Lava
   layers:
   - Default
   - TransparentFX

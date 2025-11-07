@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    public Transform respwanPos;
+
+    public GameObject testObj;
+
     Vector3 velocity;
     bool isGrounded;
 
@@ -20,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+       
     }
 
     // Update is called once per frame
@@ -38,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * normalspeed * Time.deltaTime);
+       controller.Move(move * normalspeed * Time.deltaTime); // this is overwriting position
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -47,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
 
-        controller.Move(velocity * Time.deltaTime);
+       controller.Move(velocity * Time.deltaTime); // this is overwriting position
 
         if (isGrounded == false)
         {
@@ -60,12 +66,36 @@ public class PlayerMovement : MonoBehaviour
             controller.stepOffset = 0.6f;
         }
 
+
+
+       
+
+
     }
 
+    private void FixedUpdate()
+    {
+           
+    }
+
+   
     IEnumerator StepCD()
     {
         yield return new WaitForSeconds(2f);
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Lava")
+        {
+            Debug.Log("start");
+            //this.transform.position = respwanPos.position;  -----> when the charcter controller stops overwriting the trnasfrom & position uncomment this.
+
+            SceneManager.LoadScene(1);
+           
+            Debug.Log("end");
+        }
     }
 
 

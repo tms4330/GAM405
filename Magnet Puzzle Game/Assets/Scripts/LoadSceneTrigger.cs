@@ -8,7 +8,7 @@ public class LoadSceneTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "player")
+        if (other.tag == "Player")
         {
             SceneManager.LoadScene(SceneName); // loads scene When player enter the trigger collider
         }

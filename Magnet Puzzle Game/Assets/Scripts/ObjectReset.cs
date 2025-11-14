@@ -17,10 +17,9 @@ public class ObjectReset : MonoBehaviour
         
     }
 
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Lava")
+        if (other.gameObject.tag == "Lava")
         {
             transform.position = reset.position;
         }

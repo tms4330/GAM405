@@ -744,7 +744,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &325598478
 BoxCollider:
@@ -2149,6 +2149,31 @@ MonoBehaviour:
   distance: 5
   speed: 0.5
   axisSource: {fileID: 0}
+--- !u!1 &695650641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4615093403296342454, guid: d9a7cd38bed815b4ebb7156377f3b8a5, type: 3}
+  m_PrefabInstance: {fileID: 4863596172150357040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &695650643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695650641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef19cd8aa5b4f940b0ad9a4b097381c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MagnetPhysicScript
+  floatPoint: {fileID: 1758755740}
+  launchSpeed: 10
+  StrengthOfAttraction: 10
+  snapDist: 0.1
+  weaponRange: 5
+  mask:
+    serializedVersion: 2
+    m_Bits: 447
 --- !u!1 &706101240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4835,6 +4860,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1792368781}
   m_SourcePrefab: {fileID: 100100000, guid: 72941c2a30850314083109b3bba5b7ae, type: 3}
+--- !u!4 &1758755740 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7982651130092811800, guid: d9a7cd38bed815b4ebb7156377f3b8a5, type: 3}
+  m_PrefabInstance: {fileID: 4863596172150357040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1792368779 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 72941c2a30850314083109b3bba5b7ae, type: 3}
@@ -4870,7 +4900,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &1792368782
 BoxCollider:
@@ -5257,7 +5287,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &2087238428
 BoxCollider:
@@ -5513,10 +5543,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8033357210983996442, guid: d9a7cd38bed815b4ebb7156377f3b8a5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4615093403296342454, guid: d9a7cd38bed815b4ebb7156377f3b8a5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 695650643}
   m_SourcePrefab: {fileID: 100100000, guid: d9a7cd38bed815b4ebb7156377f3b8a5, type: 3}
 --- !u!1 &4863596172150357041 stripped
 GameObject:

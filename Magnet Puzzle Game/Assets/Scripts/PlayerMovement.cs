@@ -73,11 +73,6 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
-    {
-           
-    }
-
    
     IEnumerator StepCD()
     {
@@ -90,7 +85,9 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "Lava")
         {
             Debug.Log("start");
-            //this.transform.position = respwanPos.position;  -----> when the charcter controller stops overwriting the trnasfrom & position uncomment this.
+            /*this.transform.position = respwanPos.position;  -----> when the 
+             * charcter controller stops overwriting the transfrom & 
+             * position uncomment this.*/
 
             SceneManager.LoadScene(1);
            

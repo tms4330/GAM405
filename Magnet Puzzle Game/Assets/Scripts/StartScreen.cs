@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StartScreen : MonoBehaviour
@@ -18,5 +19,11 @@ public class StartScreen : MonoBehaviour
         canvas.SetActive(false);
         cam.GetComponent<CamMovement>().enabled = true;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void onQuit()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
     }
 }
